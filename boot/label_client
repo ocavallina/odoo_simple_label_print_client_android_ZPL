@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Esperar conectividad
+sleep 60
+
+# Ir al directorio del proyecto
+cd ~/cliente_zpl
+
+LOG_FILE=~/label_service.log
+
+# Limpiar log completamente
+> $LOG_FILE
+echo "$(date): Iniciando servicio" >> $LOG_FILE
+
+# Loop infinito con reinicio automático
+while true; do
+    # Verificar conectividad
+    if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
+        # Ejecutar cliente (solo errores al log)
+        python web_label_client_android.py 2>> $LOG_FILE >/dev/null
+    fi
+    
+    echo "$(date): Reiniciando" >> $LOG_FILE
+    sleep 30
+done

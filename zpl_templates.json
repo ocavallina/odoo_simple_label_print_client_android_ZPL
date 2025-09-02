@@ -2,11 +2,11 @@
 {
   "standard": {
     "name": "Etiqueta Estándar",
-    "template": "^XA\n^CI28\n^PW456\n^LL152\n^LS24\n^MMG\n\n^FT100,35^A0N,28,22^FD{product_name}^FS\n^FT40,55^A0N,20,18^FDREF: {default_code}^FS\n^FT300,55^A0N,24,20^FD{currency_symbol}{price:.2f}^FS\n^BY1.5,3,50\n^FO60,70^BCN,50,Y,N,N^FD{barcode}^FS\n^XZ"
+    "template": "^XA\n^CI28\n^PW456\n^LL152\n^LS24\n^MMG\n\n^FT100,35^A0N,28,22^FD{product_name}^FS\n^FT40,55^A0N,20,18^FDREF: {default_code}^FS\n^BY1.5,3,50\n^FO60,70^BCN,50,Y,N,N^FD{barcode}^FS\n^XZ"
   },
-  "simple": {
-    "name": "Etiqueta Simple", 
-    "template": "^XA\n^PW456\n^LL100\n^FT50,30^A0N,24,20^FD{product_name}^FS\n^FT50,60^A0N,20,18^FD{currency_symbol}{price:.2f}^FS\n^XZ"
+  "conprecio": {
+    "name": "Etiqueta Estándar con Precio",
+    "template": "^XA\n^CI28\n^PW456\n^LL152\n^LS24\n^MMG\n\n^FT100,35^A0N,28,22^FD{product_name}^FS\n^FT40,55^A0N,20,18^FDREF: {default_code}^FS\n^FT300,55^A0N,24,20^FD{currency_symbol}{price:.2f}^FS\n^BY1.5,3,50\n^FO60,70^BCN,50,Y,N,N^FD{barcode}^FS\n^XZ"
   },
   "barcode_only": {
     "name": "Solo Código de Barras",

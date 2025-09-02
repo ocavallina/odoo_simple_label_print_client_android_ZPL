@@ -318,7 +318,7 @@ if __name__ == '__main__':
     print(f"🏢 Empresa: {config.get('company_name', 'N/A')}")
     
     try:
-        socketio.run(app, host=host, port=port, debug=debug)
+        socketio.run(app, host=host, port=port, debug=debug, allow_unsafe_werkzeug=True)
     except Exception as e:
         logger.error(f"Error iniciando servidor: {e}")
         print("💡 Intenta cambiar el puerto en printer_config.json")

@@ -44,7 +44,7 @@ def load_config():
     global config, zpl_templates
     
     # Buscar configuración específica para Android
-    config_files = ['printer_config_android.json', 'printer_config.json']
+    config_files = ['printer_config_android.json']
     
     for config_file in config_files:
         try:
@@ -54,19 +54,6 @@ def load_config():
                 break
         except FileNotFoundError:
             continue
-    
-    if not config:
-        logger.warning("Usando configuración por defecto para Android")
-        config = {
-            "odoo_url": "https://el-777.com",
-            "printer_ip": "192.168.1.112",
-            "printer_port": 9100,
-            "auto_refresh": 60,  # Más largo para ahorrar batería
-            "host": "0.0.0.0",
-            "port": 8080,
-            "debug": False
-        }
-    
     try:
         with open('zpl_templates.json', 'r', encoding='utf-8') as f:
             zpl_templates = json.load(f)
